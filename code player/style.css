@@ -1,0 +1,120 @@
+html{
+    max-width: 100vw;
+    height: 100vh;
+}
+body{
+    max-width: 100vw;
+    height: 100vh;
+    padding: 0;
+    margin: 0;
+    font-size: 16px;
+    box-sizing: border-box;
+    font-family: "HelveticaNeue-Light", Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-weight: 300;
+}
+header{
+    padding: 0 1rem;
+    /* background-color: bisque; */
+    background-color: azure;
+    border-bottom: 1px solid grey;
+    display: flex;
+    justify-content: space-between;
+}
+#title{
+    font-size: 1.2rem;
+    font-weight: 800;
+    align-self: center;
+}
+#run{
+    font-size: 1rem;
+    font-weight: 700;
+    height: max-content;
+    padding: 0.6rem 0.8rem;
+    margin: 1rem 1rem;
+    border: 1px solid grey;
+    border-radius: 2px;
+}
+#codeList{
+    padding-inline-start: 0;
+    align-self: flex-end;
+    margin: 0.2rem auto 0.5rem auto;
+}
+#codeList li{
+    font-size: 0.8rem;
+    list-style: none;
+    float: left;
+    border: 1px solid grey;
+    padding: 1rem 0.5rem 0.5rem 0.5rem;
+}
+.selected{
+    background-color: rgb(34, 34, 34);
+    color: honeydew;
+}
+@media (max-width: 500px){
+    header{
+        display: block;
+        text-align: center;
+        padding: 0 1rem 0.8rem 1rem;
+    }
+    #codeList{
+        margin: 0.2rem 0;
+        border: none;
+    }
+    #codeList li{
+        border: 1px solid grey;
+        padding: 1rem 0.5rem 0.5rem 0.5rem;
+    }
+    #title{
+        justify-self: right;
+        margin: 0;
+        padding: 1rem 0;
+    }
+    #run{
+        margin: 0;
+    }
+}
+/* main content */
+main{
+    display: flex;
+}
+.hide{
+    display: none;
+}
+.codeContainer{
+    width: 50%;
+    border-right: 1px solid grey;
+}
+.codeContainer p{
+    font-size: 0.8rem ;
+    font-weight: 700;
+    padding-right: 1rem;
+    text-align: right;
+}
+.codeContainer textarea{
+    font-family: monospace;
+    border: none;
+    border-top: 1px solid rgb(197, 197, 197);
+    padding: 0.5rem;
+    max-height: 100%;
+    max-width: 100%;
+}
+.codeContainer textarea:focus{
+    border: none;
+}
+iframe{
+    border-top: 1px solid rgb(197, 197, 197);
+    height: 100%;
+    width: 100%;
+}
+@media (max-width: 767px){
+    main{
+        flex-direction: column;
+    }
+    .codeContainer{
+        width: 100%;
+        border-bottom: 1px solid grey;
+    }
+    .codeContainer p{
+        padding-right: 1.5rem;
+    }
+}

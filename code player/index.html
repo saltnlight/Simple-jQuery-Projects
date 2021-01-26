@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../jquery-3.5.1.min.js"></script>
+    <script src="../jquery-ui.min.js"></script>
+
+    <link rel="stylesheet" href="../jquery-ui.min.css">
+    <link rel="stylesheet" href="../jquery-ui.theme.min.css">
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <header>
+        <h1 id="title">CodePlayer</h1>
+        <ul id="codeList">
+            <li class="codeList-btn selected">HTML</li>
+            <li class="codeList-btn">CSS</li>
+            <li class="codeList-btn">JS</li>
+            <li class="codeList-btn selected">RESULT</li>
+        </ul>
+        <button id="run">Run</button>
+    </header>
+    <main>
+        <section class="codeContainer" id="HTML">
+            <p>HTML</p>
+            <textarea name="HTML" id="HTMLcode" placeholder="<h1>Hello, World</h1>"></textarea>
+        </section>
+        <section class="codeContainer hide" id="CSS">
+            <p>CSS</p>
+            <textarea name="CSS" id="CSScode" placeholder="h1{color:green;}"></textarea>
+        </section>
+        <section class="codeContainer hide" id="JS">
+            <p>JS</p>
+            <textarea name="JS" id="JScode"></textarea>
+            <!--  cols="30" rows="10" -->
+        </section>
+        <section class="codeContainer" id="RESULT">
+            <p>RESULT</p>
+            <iframe src="" id="RESULTframe" frameborder="0"></iframe>
+        </section>
+    </main>
+    <script src="./main.js"></script>
+</body>
+</html>

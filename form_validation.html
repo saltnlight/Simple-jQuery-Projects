@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./jquery-3.5.1.min.js"></script>
+    <style>
+        #container{
+            width: 50vw;
+            padding: 50px 0;
+            margin: 0 auto;
+        }
+        input{
+            width: 70%;
+            padding: 0.5rem 0.3rem;
+            border: 1px solid grey;
+            border-radius: 5px;
+            margin: 0.5rem 0;
+        }
+        button{
+            padding: 0.5rem 0.5rem;
+            border-radius: 5px;
+            border: 1px solid grey;
+        }
+        button:hover{
+            background-color: blanchedalmond;
+            border: 2px solid rgb(36, 36, 36);
+        }
+    </style>
+</head>
+<body>
+    <section id="container">
+        <div id="error"></div>
+        <form id="validateForm">
+            <div><label for="email">Email</label>
+            <input type="email" name="email" id="email"></div>
+
+            <div><label for="phone">Phone</label>
+            <input type="tel" name="phone" id="phone"></div>
+
+            <div><label for="password">Password</label>
+            <input type="password" name="password" id="pwd"></div>
+            
+            <div><label for="password">Confirm Password</label>
+            <input type="password" name="password" id="conPwd"></div>
+
+            <br><button>Submit</button>
+        </form>
+    </section>
+    <script>
+        $("button").click(function(e) {e.preventDefault;});
+
+        $("#validateForm").submit(function(event){
+            event.preventDefault;
+            var errorMsg = "";
+            function isEmailValid(email){
+                var pattern = new RegExp(/gmail/i);
+                return pattern.test(email);
+            }
+
+            var email = $("#email").val();
+            if ( !isEmailValid(email) ) {
+                errorMsg = "<br/>Invalid Email";
+                // $("#error").html("Incorrect Email").css("color", "red");
+            }
+
+            var phone = $.isNumeric($("#phone"));
+            if (!phone) {
+                errorMsg = errorMsg + "<br/>Invalid Phone Number";
+            }
+
+            var pwd = $("#pwd").val();
+            var conPwd = $("#conPwd").val();
+            if (pwd !== conPwd) {
+                errorMsg = errorMsg + "<br/>Passwords don't match";
+            }
+
+            $("#error").html(errorMsg);
+        });
+    </script>
+
+</body>
+</html>
