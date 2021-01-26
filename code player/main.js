@@ -15,6 +15,7 @@ if (winWidth < 767) {
 }
 
 $(".codeList-btn").on("click", function(){
+    // ie browser doesn't toggle
     $(this).toggleClass("selected");
     let activeDiv = $(this).html();
     $("#"+activeDiv).toggleClass("hide");
